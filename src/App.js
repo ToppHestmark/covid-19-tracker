@@ -82,36 +82,34 @@ function App() {
               onChange={onCountryChange}
               >
               <MenuItem value="worldwide">Worldwide</MenuItem>
-              {
-                countries.map(country => (
+              {countries.map(country => (
                   <MenuItem value={country.value}> {country.name} </MenuItem>
-                ))
-              }
+                ))}
             </Select>
           </FormControl>
         </div>
 
         <div className="app__stats">
           <InfoBox 
-          isRed
-          active={casesType === "cases"}
-          title="Coronavirus cases" 
-          onClick={(e) => setCasesType('cases')}
-          cases={prettyPrintStat(countryInfo.todayCases)} 
-          total={prettyPrintStat(countryInfo.cases)} />
+            isRed
+            active={casesType === "cases"}
+            title="Coronavirus cases" 
+            onClick={(e) => setCasesType('cases')}
+            cases={prettyPrintStat(countryInfo.todayCases)} 
+            total={prettyPrintStat(countryInfo.cases)} />
           <InfoBox 
-          active={casesType === "recovered"}
-          title="Recovered" 
-          onClick={(e) => setCasesType('recovered')}
-          cases={prettyPrintStat(countryInfo.todayRecovered)} 
-          total={prettyPrintStat(countryInfo.recovered)} />
+            active={casesType === "recovered"}
+            title="Recovered" 
+            onClick={(e) => setCasesType('recovered')}
+            cases={prettyPrintStat(countryInfo.todayRecovered)} 
+            total={prettyPrintStat(countryInfo.recovered)} />
           <InfoBox 
-          isRed
-          active={casesType === "deaths"}
-          title="Deaths"
-          onClick={(e) => setCasesType('deaths')}
-          cases={prettyPrintStat(countryInfo.todayDeaths)} 
-          total={prettyPrintStat(countryInfo.deaths)} />
+            isRed
+            active={casesType === "deaths"}
+            title="Deaths"
+            onClick={(e) => setCasesType('deaths')}
+            cases={prettyPrintStat(countryInfo.todayDeaths)} 
+            total={prettyPrintStat(countryInfo.deaths)} />
         </div>
 
         <Map 
@@ -126,7 +124,7 @@ function App() {
         <CardContent>
           <h3>Live cases by country</h3>
           <Table countries={tableData} />
-          <h3 className="app__graphTitle">Worldwide new {casesType}</h3>
+          <h3 className="app__graphTitle">Worldwide new cases</h3>
           <LineGraph className="app__graph" casesType={casesType} />
         </CardContent>
       </Card>

@@ -37,7 +37,6 @@ const options = {
           display: false,
         },
         ticks: {
-          // Include a dollar sign in the ticks
           callback: function (value, index, values) {
             return numeral(value).format("0a");
           }
@@ -74,7 +73,6 @@ function LineGraph({ casesType = 'cases', ...props }) {
       .then(response => response.json())
       .then(data => {
         let chartData = buildChartData(data, "cases");
-        console.log(chartData);
         setData(chartData)
       })
     }
@@ -85,14 +83,14 @@ function LineGraph({ casesType = 'cases', ...props }) {
     <div className={props.className}>
       {data?.length > 0 && (
           <Line 
-          options={options}
-          data={{
-            datasets: [{
-              backgroundColor: "rgba(204, 16, 52, 0.5)",
-              borderColor: "#CC1034",
-              data: data,
-            }]
-          }}
+            options={options}
+            data={{
+              datasets: [{
+                backgroundColor: "rgba(204, 16, 52, 0.5)",
+                borderColor: "#CC1034",
+                data: data
+              }]
+            }}
           />
       )}
     </div>

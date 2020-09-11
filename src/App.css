@@ -18,7 +18,7 @@ body {
 
 .app__left {
   flex: 90%;
-  margin: 0 10px 0 10px;
+  padding-bottom: 15px;
 }
 
 .app__header h1 {
