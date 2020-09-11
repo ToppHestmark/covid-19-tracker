@@ -1,8 +1,9 @@
 import React from 'react';
 import './Map.css'
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
+import { showDataOnMap } from './util';
 
-function Map({ center, zoom }) {
+function Map({ countries, casesType, center, zoom }) {
   return (
     <div className="map">
       <LeafletMap 
@@ -14,6 +15,8 @@ function Map({ center, zoom }) {
             attribute='&copy; <a href="http://osm.org/copyright">
             OpenStreetMap</a> contributors'
           />
+
+          {showDataOnMap(countries, casesType)}
       </LeafletMap>
     </div>
   )
