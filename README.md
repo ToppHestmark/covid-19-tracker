@@ -6,3 +6,4 @@
 - React Hooks
 - Material-UI table
 - Chart: [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
+- Map from leaflet.js
